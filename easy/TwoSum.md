@@ -29,12 +29,9 @@ Cheklovlar:
 Faqat bitta to'g'ri javob mavjud.
 
 ```python
-def twoSum(nums: list, target: int) -> list: 
-        l = len(nums)
-        for i in range(l):
-            n = nums[i]
-            d = target - n
-            if d in nums[i+1:]:
-                return [nums.index(n), i + nums[i+1:].index(d) + 1]
+def twoSum(self, nums: int, target: int) -> int:
+        for i, n in enumerate(nums):
+            if target-n in nums[i+1:]:
+                return i, i+1+nums[i+1:].index(target-n)
 
 ```
